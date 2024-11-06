@@ -1,3 +1,3 @@
 # aryansfprogram
-this is my first first github Repository
+this is my first first github Repository.
 Author - Aryan khare
