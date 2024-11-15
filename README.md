@@ -1,4 +1,3 @@
-# aryansfprogram
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,15 +24,18 @@
         }
 
         /* Navbar */
-        nav {
-            background-color: var(--primary-color);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--white-color);
-        }
-
+        /* Navbar */
+nav {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keeps navbar on top of other elements */
+}
         nav h1 {
             font-size: 1.8rem;
             cursor: pointer;
@@ -55,19 +57,34 @@
         nav ul li a:hover {
             color: var(--hover-color);
         }
+        .search-box {
+    display: flex;
+    align-items: center;
+}
 
-        nav .search-box {
-            display: flex;
-            align-items: center;
-        }
+.search-box input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    margin-right: 0.5rem; /* Adds spacing between input and button */
+}
 
-        nav .search-box input[type="text"] {
-            padding: 0.5rem;
-            font-size: 1rem;
-            border-radius: 5px;
-            border: none;
-            width: 200px;
-        }
+.search-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--hover-color);
+    color: var(--white-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: var(--primary-color);
+}
 
         /* Banner Section */
         .banner {
@@ -94,12 +111,49 @@
             font-size: 1rem;
             cursor: pointer;
             transition: background-color 0.3s;
+            transition: transform 0.3s ease-in-out;
+            ;
+
         }
 
         .banner button:hover {
+            transform:scale(1.15);
             background-color: var(--primary-color);
         }
+        /* Hero Image Section */
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+}
 
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the section */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white-color);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background */
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
         /* Main Sections */
         .main-sections {
             padding: 2rem;
@@ -118,7 +172,9 @@
             width: 23%;
             height: 400px;
             transition: transform 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 1); */
+            box-shadow: 0 4px 8px rgba(160, 32, 240, 0.25);
+
         }
 
         .section:hover {
@@ -146,55 +202,66 @@
 
         /* Footer */
         footer {
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    border-top: 4px solid var(--hover-color);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow effect */
+}
 
-        footer div {
-            text-align: left;
-        }
+footer div {
+    text-align: left;
+}
 
-        footer h4 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
+footer h4 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-decoration: underline;
+}
 
-        footer ul {
-            list-style: none;
-            padding: 0;
-        }
+footer ul {
+    list-style: none;
+    padding: 0;
+}
 
-        footer ul li {
-            margin: 0.5rem 0;
-        }
+footer ul li {
+    margin: 0.5rem 0;
+}
 
-        footer ul li a {
-            color: var(--white-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+footer ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
 
-        footer ul li a:hover {
-            color: var(--hover-color);
-        }
+footer ul li a:hover {
+    color: var(--hover-color);
+}
 
-        footer .social-icons {
-            display: flex;
-            gap: 0.5rem;
-        }
+footer .social-icons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    font-weight: bold;
+}
 
-        footer .social-icons a {
-            display: inline-block;
-            padding: 0.5rem;
-            background-color: var(--hover-color);
-            border-radius: 50%;
-            color: var(--white-color);
-            text-decoration: none;
-        }
+footer .social-icons a {
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: var(--hover-color);
+    border-radius: 50%;
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+footer .footerheading{
+    text-decoration: none;
+}
+
     </style>
 </head>
 <body>
@@ -212,6 +279,7 @@
         </ul>
         <div class="search-box">
             <input type="text" placeholder="3A's.search">
+            <button class="search-button">search</button>
         </div>
     </nav>
 
@@ -221,8 +289,15 @@
         <p>Find the best deals on clothes, electronics, groceries, and more.</p>
         <button>Shop Now</button>
     </div>
-
-    <!-- Main Sections -->
+     <!-- Hero Image Section -->
+<div class="hero-image">
+    <img src="pexels-rostislav-10458835.jpg" alt="Mega Sale! Up to 70% Off on Mobile Accessories">
+    <div class="hero-text">
+        <h2>Mobile Accessories</h2>
+        <p>Up to 70% off</p>
+    </div>
+</div>
+  <!-- Main Sections -->
     <div class="main-sections">
         <!-- Boxes with Various Categories and Offers -->
         <div class="section">
@@ -304,10 +379,20 @@
     <!-- Footer -->
     <footer>
         <div>
-            <h4>Get to Know Us</h4>
+            <h4 class="footerheading">Get to Know Us</h4>
             <ul>
                 <li><a href="#">About 3A's MEGA MART</a></li>
                 <li><a href="#">Careers</a></li>
                 <li><a href></a></li>
             </div>
+            <div>
+                <h4 class="footerheading">Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#">facebook<i class="fab fa-facebook-f"></i></a>
+                    <a href="#">twitter<i class="fab fa-twitter"></i></a>
+                    <a href="#">instagram<i class="fab fa-instagram"></i></a>
+                    <a href="#">linkedin<i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
             
